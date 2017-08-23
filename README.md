@@ -1,2 +1,83 @@
-# seq-exec-js
-Скрипт для организации последовательного исполнения JS-функций посредством механизма обратного вызова.
+# Класс **[SeqExec](seq-exec.js#L1)** и его методы
+
+Файл *[seq-exec.js](seq-exec.js)* содержит класс **[SeqExec](seq-exec.js#L1)** предназначенный для организации последовательного исполнения JS-функций посредством механизма обратного вызова.
+
+Методы класса **[SeqExec](seq-exec.js#L1)**:
+
+| Название метода         | Описание                                                                         |
+| ----------------------- | -------------------------------------------------------------------------------- |
+| [chain](seq-exec.js#L9) | Позволяет объединить функции в цепочку из последовательно выполняющихся функций. |
+| [loop](seq-exec.js#L38) | Позволяет последовательно выполнить серию повторяющихся операций.                |
+
+# Примеры
+
+## Простой пример: цепочка последовательно выполняющихся функций
+
+В нижеприведённом примере ключевую роль играет вызов функции **next()**, только после которого происходит переход к исполнению следующей функции:
+
+```js
+SeqExec.chain(function (next) {
+    console.log("1");
+    next(); // перейти к исполнению следующей функции в цепочке
+}).then(function (next) {
+    console.log("2");
+    next(); // перейти к исполнению следующей функции в цепочке
+}).then(function (next) {
+    console.log("3");
+});
+```
+
+Вывод:
+
+```text
+1
+2
+3
+```
+
+## Простой пример: циклы
+
+В качестве простого примера, демонстрирующего суть метода **SeqExec.loop(loopBodyCallback, stopConditionCallback)** можно привести альтернативную реализацию циклов для JavaScript, без использования конструкций **for** и **while**:
+
+```js
+var idx = 1;
+SeqExec.loop(function loopBody(cont) {
+    console.log(idx);
+    idx += 1;
+    cont(); // continue
+}, function stopCondition() {
+    return idx > 10 ? true : false;
+});
+```
+
+Вывод:
+
+```text
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+``` 
+
+# Дополнительные пояснения к коду
+
+ООП в JavaScript:
+
+- [stackoverflow.com/questions/7694501/class-vs-static-method-in-javascript](https://stackoverflow.com/questions/7694501/class-vs-static-method-in-javascript)
+
+Синхронность и асинхронность в JavaScript:
+
+- [stackoverflow.com/questions/2035645/when-is-javascript-synchronous](https://stackoverflow.com/questions/2035645/when-is-javascript-synchronous)
+- [stackoverflow.com/questions/5187968/how-should-i-call-3-functions-in-order-to-execute-them-one-after-the-other](https://stackoverflow.com/questions/5187968/how-should-i-call-3-functions-in-order-to-execute-them-one-after-the-other)
+- [stackoverflow.com/questions/1859185/how-to-force-sequential-javascript-execution](https://stackoverflow.com/questions/1859185/how-to-force-sequential-javascript-execution)
+
+Промисы:
+
+- [learn.javascript.ru/promise](https://learn.javascript.ru/promise)
+- [artemdemo.me/blog/как-делаются-promise-в-javascript](http://artemdemo.me/blog/%D0%BA%D0%B0%D0%BA-%D0%B4%D0%B5%D0%BB%D0%B0%D1%8E%D1%82%D1%81%D1%8F-promise-%D0%B2-javascript/)
