@@ -30,6 +30,8 @@ SeqExec.chain(function (next) {
 Вывод:
 
 ```text
+$ node example1.js
+Example 1:
 1
 2
 3
@@ -53,6 +55,8 @@ SeqExec.loop(function loopBody(cont) {
 Вывод:
 
 ```text
+$ node example2.js
+Example 2:
 1
 2
 3
@@ -81,3 +85,17 @@ SeqExec.loop(function loopBody(cont) {
 
 - [learn.javascript.ru/promise](https://learn.javascript.ru/promise)
 - [artemdemo.me/blog/как-делаются-promise-в-javascript](http://artemdemo.me/blog/%D0%BA%D0%B0%D0%BA-%D0%B4%D0%B5%D0%BB%D0%B0%D1%8E%D1%82%D1%81%D1%8F-promise-%D0%B2-javascript/)
+
+npm:
+
+- [docs.npmjs.com/getting-started/publishing-npm-packages](https://docs.npmjs.com/getting-started/publishing-npm-packages)
+- [eladnava.com/publishing-your-first-package-to-npm](https://eladnava.com/publishing-your-first-package-to-npm/)
+- [gist.github.com/coolaj86/1318304#getting-started-with-npm-as-a-developer](https://gist.github.com/coolaj86/1318304#getting-started-with-npm-as-a-developer)
+
+Node.js:
+
+- [stackoverflow.com/questions/4224606/how-to-check-whether-a-script-is-running-under-node-js](https://stackoverflow.com/questions/4224606/how-to-check-whether-a-script-is-running-under-node-js)
+
+JSLint:
+
+- [jslint.com/help.html](http://www.jslint.com/help.html)
