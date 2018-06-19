@@ -69,6 +69,42 @@ Example 2:
 10
 ``` 
 
+# Установка в свой проект
+
+```bash
+$ npm install seq-exec --save
+```
+
+# Публикация npm-пакета
+
+Фиксация изменений:
+
+```bash
+$ git add .
+$ git commit -S -m "0.0.1"
+$ git tag -s v0.0.1 -m 'signed 0.0.1 tag'
+```
+
+или
+
+```bash
+$ npm version patch
+```
+
+Отправка на [github.com](https://github.com/gusenov/seq-exec-js):
+
+```bash
+$ git push --tags origin master:master
+```
+
+Отправка на [npmjs.com](https://www.npmjs.com/package/seq-exec):
+
+```bash
+$ npm login
+$ npm config ls
+$ npm publish
+```
+
 # Дополнительные пояснения к коду
 
 ООП в JavaScript:
@@ -86,9 +122,12 @@ Example 2:
 - [learn.javascript.ru/promise](https://learn.javascript.ru/promise)
 - [artemdemo.me/blog/как-делаются-promise-в-javascript](http://artemdemo.me/blog/%D0%BA%D0%B0%D0%BA-%D0%B4%D0%B5%D0%BB%D0%B0%D1%8E%D1%82%D1%81%D1%8F-promise-%D0%B2-javascript/)
 
-npm:
+Создание npm-пакета:
 
 - [docs.npmjs.com/getting-started/publishing-npm-packages](https://docs.npmjs.com/getting-started/publishing-npm-packages)
+- [docs.npmjs.com/misc/developers](https://docs.npmjs.com/misc/developers)
+- [docs.npmjs.com/files/package.json](https://docs.npmjs.com/files/package.json)
+- [spdx.org/licenses](https://spdx.org/licenses/)
 - [eladnava.com/publishing-your-first-package-to-npm](https://eladnava.com/publishing-your-first-package-to-npm/)
 - [gist.github.com/coolaj86/1318304#getting-started-with-npm-as-a-developer](https://gist.github.com/coolaj86/1318304#getting-started-with-npm-as-a-developer)
 
@@ -99,3 +138,7 @@ Node.js:
 JSLint:
 
 - [jslint.com/help.html](http://www.jslint.com/help.html)
+
+Git:
+
+- [git-scm.com/book/en/v2/Git-Basics-Tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
